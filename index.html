@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dachwerk Huber | Ihr Meisterbetrieb für Bedachungen & Holzbau</title>
+    <meta name="description" content="Professionelle Dachdeckerarbeiten, Sanierungen und Holzbau von Dachwerk Huber. Qualität, Zuverlässigkeit und Handwerkstradition aus Ihrer Region.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            /* Color Palette */
+            --primary: #1e293b; /* Deep Slate */
+            --primary-light: #334155;
+            --accent: #f59e0b; /* Amber/Gold for Crafts */
+            --accent-hover: #d97706;
+            --secondary: #0f172a;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+            
+            /* Typography */
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding: 0 24px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Top Bar --- */
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .top-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-info-item i {
+            width: 14px;
+            height: 14px;
+            color: var(--accent);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scrolled .header-wrapper {
+            padding: 15px 20px;
+        }
+
+        .scrolled header {
+            background: #0f172a; 
+            color: white;
+            padding: 12px 32px;
+            border-radius: 100px;
+            width: fit-content;
+            min-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .scrolled .logo, .scrolled .logo span {
+            color: white !important;
+        }
+
+        .header-hidden {
+            transform: translateY(-120%) !important;
+        }
+
+        .nav-links a { color: inherit; }
+        .logo { color: inherit; }
+        .mobile-menu-toggle { color: inherit; }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 32px; /* Added spacing to nav */
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 15px;
+            color: white !important; /* Force white for visibility */
+            white-space: nowrap; 
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent) !important;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 8px; /* Slightly tighter gap */
+            align-items: center;
+            margin-left: 24px; 
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-icon {
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border-radius: 50%;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero {
+            padding: 140px 0 80px;
+            background:
+                linear-gradient(to bottom, rgba(10, 18, 35, 0.72) 0%, rgba(10, 18, 35, 0.60) 60%, rgba(10, 18, 35, 0.78) 100%),
+                url('Hero background.png') center / cover no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            backdrop-filter: blur(10px);
+            margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-badge span { color: var(--accent); }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .hero h1 span { color: var(--accent); }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        /* Floating Sidebar */
+        .floating-sidebar {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            z-index: 1001;
+        }
+
+        .sidebar-item {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .sidebar-phone { background: var(--primary-light); }
+        .sidebar-wa { background: var(--success); }
+
+        /* Large USPs */
+        .hero-usp-blocks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .usp-block {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .usp-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .usp-content h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .usp-content p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0;
+        }
+
+        .hero-usps {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .usp-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .usp-item i {
+            color: var(--success);
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 8px solid white;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 20px;
+            left: -30px;
+            background: white;
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 140px 0;
+        }
+
+        #leistungen {
+            margin: 40px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Services Grid --- */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1250px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 350px; /* Fixed width for better centering behavior */
+            flex-grow: 0; /* Don't stretch, stay centered */
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-light);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .service-card:hover .icon-box {
+            background: var(--accent);
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 250px; /* Improve readability and centering */
+        }
+
+        /* --- Stats --- */
+        .stats {
+            background: var(--primary);
+            padding: 60px 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Projects --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+            padding: 24px;
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .chevron {
+            transform: rotate(180deg);
+        }
+
+        .chevron {
+            transition: var(--transition);
+        }
+
+        /* --- Before/After Slider --- */
+        .ba-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 40px;
+        }
+
+        .ba-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ba-after {
+            width: 50%;
+            border-right: 3px solid white;
+            z-index: 2;
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            width: 4px;
+            background: white;
+            z-index: 3;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+        }
+
+        .ba-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: var(--shadow-lg);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m18 8 4 4-4 4'/%3E%3Cpath d='M2 12h20'/%3E%3Cpath d='m6 8-4 4 4 4'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px;
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            z-index: 4;
+        }
+
+        .label-before { left: 20px; }
+        .label-after { right: 20px; }
+
+        /* --- Multi-Project BA Tabs --- */
+        .ba-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .ba-tab {
+            flex: 1;
+            padding: 16px 20px;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            text-align: center;
+        }
+
+        .ba-tab:hover {
+            border-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .ba-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .ba-tab-num {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ba-tab.active .ba-tab-num { opacity: 0.7; }
+
+        .ba-panel { display: none; }
+        .ba-panel.active { display: block; }
+
+        .ba-single-wrap {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 0;
+        }
+
+        .ba-single-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ba-no-before-note {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.55);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            z-index: 4;
+        }
+
+        /* Instruction hint on slider */
+        .ba-hint {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.45);
+            color: white;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            z-index: 4;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        .ba-hint.hidden { opacity: 0; }
+
+        @media (max-width: 640px) {
+            .ba-tabs { flex-direction: column; gap: 8px; }
+            .ba-tab { flex-direction: row; justify-content: flex-start; padding: 12px 16px; }
+            .ba-container { height: 280px; }
+            .ba-single-wrap { height: 280px; }
+        }
+
+        /* --- Marquee Testimonials --- */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 24px;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 12px)); }
+        }
+
+        .testimonial-card {
+            width: 350px;
+            flex-shrink: 0;
+            background: #ffffff; /* Explicit pure white */
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Enhanced visibility shadow */
+        }
+
+        /* --- Contact Section --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        .contact-info-card {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            height: auto; /* Fixed height issue */
+        }
+
+        .contact-info-list li {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* --- Testimonials --- */
+        .testimonials {
+            background: var(--bg-white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-left: 32px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .client-info p {
+            font-style: normal;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* --- Karriere / Offene Stellen --- */
+        .karriere-section {
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+
+        .karriere-watermark {
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-display);
+            font-size: clamp(120px, 20vw, 220px);
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.04);
+            letter-spacing: -8px;
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .karriere-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+
+        .karriere-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .karriere-section h2 {
+            font-size: clamp(36px, 5vw, 52px);
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .karriere-section p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 560px;
+        }
+
+        .karriere-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 480px;
+        }
+
+        .karriere-stat {
+            padding: 22px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .karriere-stat:nth-child(2),
+        .karriere-stat:nth-child(4) { border-right: none; }
+        .karriere-stat:nth-child(3),
+        .karriere-stat:nth-child(4) { border-bottom: none; }
+
+        .karriere-stat strong {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+
+        .karriere-stat span {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .karriere-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-size: 15px;
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .karriere-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 640px) {
+            .karriere-stats { max-width: 100%; }
+            .karriere-section { padding: 70px 0; }
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: var(--accent);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: left; }
+            .hero-content { display: flex; flex-direction: column; align-items: flex-start; }
+            .hero h1 { font-size: 42px; text-align: left; }
+            .hero p { text-align: left; margin-left: 0; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-image-container { margin-top: 40px; }
+        }
+
+        @media (max-width: 992px) {
+            header { min-width: 0; width: 95vw; }
+            .scrolled header { min-width: 0; width: 95vw; }
+        }
+
+        @media (max-width: 640px) {
+            .header-wrapper { padding: 8px; }
+            .scrolled .header-wrapper { padding: 8px; }
+            header {
+                padding: 10px 16px;
+                width: 95vw;
+                min-width: 0;
+            }
+            .scrolled header { 
+                padding: 10px 16px; 
+                width: 95vw; 
+                min-width: 0;
+                background: #0f172a;
+                color: white;
+            }
+            .logo { font-size: 18px; }
+            .cta-group { gap: 8px; }
+            .btn-icon { width: 40px; height: 40px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; line-height: 1.1; }
+            .hero p { font-size: 16px; line-height: 1.4; }
+            section { padding: 50px 0; }
+        }
+
+        /* --- Liquid Glass Dropdown --- */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 15px;
+            color: white;
+            padding: 0;
+            transition: color 0.2s ease;
+        }
+
+        .dropdown-trigger:hover {
+            color: var(--accent);
+        }
+
+        .dropdown-trigger .dropdown-chevron {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.7;
+        }
+
+        .nav-dropdown.open .dropdown-chevron {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 18px);
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px) scale(0.96);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2000;
+            min-width: 420px;
+            padding: 10px;
+            border-radius: 20px;
+            background: rgba(8, 15, 32, 0.72);
+            backdrop-filter: blur(32px) saturate(200%);
+            -webkit-backdrop-filter: blur(32px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow:
+                0 24px 64px rgba(0, 0, 0, 0.5),
+                0 4px 16px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 12px;
+            height: 12px;
+            background: rgba(8, 15, 32, 0.72);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+
+        .dropdown-menu-sm {
+            min-width: 240px;
+        }
+
+        .nav-dropdown.open .dropdown-menu {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 14px;
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.85) !important;
+            transition: background 0.18s ease, color 0.18s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: white !important;
+        }
+
+        .dropdown-item:hover .dropdown-item-icon {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .dropdown-item-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: background 0.18s ease, color 0.18s ease;
+        }
+
+        .dropdown-item-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .dropdown-item-text strong {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.3;
+            font-family: var(--font-display);
+        }
+
+        .dropdown-item-text small {
+            font-size: 11px;
+            opacity: 0.55;
+            font-weight: 400;
+        }
+
+        .mobile-menu-toggle {
+            display: none !important;
+            color: white;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none !important; }
+            .mobile-menu-toggle { display: flex !important; }
+        }
+
+        @media (max-width: 640px) {
+            header { padding: 8px 12px !important; }
+            .logo { font-size: 16px !important; margin-right: 12px !important; }
+            .cta-group { gap: 6px !important; }
+            .btn-kontakt-mobile { padding: 8px 12px !important; font-size: 11px !important; }
+        }
+
+        /* Mobile Nav Dropdown */
+        .mobile-nav {
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 0;
+            width: 260px;
+            background: rgba(8, 15, 32, 0.80);
+            backdrop-filter: blur(32px) saturate(200%);
+            -webkit-backdrop-filter: blur(32px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow:
+                0 24px 64px rgba(0, 0, 0, 0.55),
+                0 4px 16px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(-10px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-nav::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            right: 18px;
+            width: 12px;
+            height: 12px;
+            background: rgba(8, 15, 32, 0.80);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            backdrop-filter: blur(32px);
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            transition: background 0.18s ease, color 0.18s ease;
+        }
+
+        .mobile-nav-link:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: white !important;
+        }
+
+        .mobile-nav-link .mnav-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: background 0.18s ease, color 0.18s ease;
+        }
+
+        .mobile-nav-link:hover .mnav-icon {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .mobile-nav-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.07);
+            margin: 6px 4px;
+        }
+
+        .mobile-nav-cta {
+            display: flex;
+            margin: 6px 4px 4px;
+        }
+
+        .mobile-nav-cta a {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            background: var(--accent);
+            color: var(--primary) !important;
+            font-weight: 700;
+            font-size: 14px;
+            font-family: var(--font-display);
+            border-radius: 12px;
+            transition: background 0.18s ease, transform 0.18s ease;
+        }
+
+        .mobile-nav-cta a:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .close-mobile-nav { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header-wrapper" id="headerWrapper">
+        <header>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <i data-lucide="hammer"></i>
+                    DACHWERK<span>HUBER</span>
+                </a>
+                <nav class="nav-links hide-mobile" style="display: flex; gap: 24px; align-items: center;">
+                    <!-- Leistungen Dropdown -->
+                    <div class="nav-dropdown" id="dropLeistungen">
+                        <button class="dropdown-trigger" onclick="toggleDropdown('dropLeistungen')">
+                            Leistungen <i data-lucide="chevron-down" class="dropdown-chevron" style="width:14px; height:14px;"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <a href="#leistungen" class="dropdown-item" onclick="closeAllDropdowns()">
+                                    <span class="dropdown-item-icon"><i data-lucide="home" style="width:16px;height:16px;"></i></span>
+                                    <span class="dropdown-item-text">
+                                        <strong>Eindeckungen</strong>
+                                        <small>Ziegel, Schiefer & Metall</small>
+                                    </span>
+                                </a>
+                                <a href="#leistungen" class="dropdown-item" onclick="closeAllDropdowns()">
+                                    <span class="dropdown-item-icon"><i data-lucide="layers" style="width:16px;height:16px;"></i></span>
+                                    <span class="dropdown-item-text">
+                                        <strong>Flachdach</strong>
+                                        <small>Abdichtung & Terrassen</small>
+                                    </span>
+                                </a>
+                                <a href="#leistungen" class="dropdown-item" onclick="closeAllDropdowns()">
+                                    <span class="dropdown-item-icon"><i data-lucide="sun" style="width:16px;height:16px;"></i></span>
+                                    <span class="dropdown-item-text">
+                                        <strong>Dachsanierung</strong>
+                                        <small>Energetische Modernisierung</small>
+                                    </span>
+                                </a>
+                                <a href="#leistungen" class="dropdown-item" onclick="closeAllDropdowns()">
+                                    <span class="dropdown-item-icon"><i data-lucide="layout" style="width:16px;height:16px;"></i></span>
+                                    <span class="dropdown-item-text">
+                                        <strong>Dachfenster</strong>
+                                        <small>Einbau & Austausch</small>
+                                    </span>
+                                </a>
+                                <a href="#leistungen" class="dropdown-item" onclick="closeAllDropdowns()">
+                                    <span class="dropdown-item-icon"><i data-lucide="cog" style="width:16px;height:16px;"></i></span>
+                                    <span class="dropdown-item-text">
+                                        <strong>Bauklempnerei</strong>
+                                        <small>Dachrinnen & Fassade</small>
+                                    </span>
+                                </a>
+                                <a href="#leistungen" class="dropdown-item" onclick="closeAllDropdowns()">
+                                    <span class="dropdown-item-icon"><i data-lucide="wrench" style="width:16px;height:16px;"></i></span>
+                                    <span class="dropdown-item-text">
+                                        <strong>Wartung & Reparatur</strong>
+                                        <small>Notdienst & Sturmschäden</small>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projekte Dropdown -->
+                    <div class="nav-dropdown" id="dropProjekte">
+                        <button class="dropdown-trigger" onclick="toggleDropdown('dropProjekte')">
+                            Projekte <i data-lucide="chevron-down" class="dropdown-chevron" style="width:14px; height:14px;"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-sm">
+                            <a href="#projekte" class="dropdown-item" onclick="closeAllDropdowns()">
+                                <span class="dropdown-item-icon"><i data-lucide="image" style="width:16px;height:16px;"></i></span>
+                                <span class="dropdown-item-text">
+                                    <strong>Dachsanierung</strong>
+                                    <small>Projekt 01</small>
+                                </span>
+                            </a>
+                            <a href="#projekte" class="dropdown-item" onclick="closeAllDropdowns()">
+                                <span class="dropdown-item-icon"><i data-lucide="image" style="width:16px;height:16px;"></i></span>
+                                <span class="dropdown-item-text">
+                                    <strong>Dacherneuerung</strong>
+                                    <small>Projekt 02</small>
+                                </span>
+                            </a>
+                            <a href="#projekte" class="dropdown-item" onclick="closeAllDropdowns()">
+                                <span class="dropdown-item-icon"><i data-lucide="image" style="width:16px;height:16px;"></i></span>
+                                <span class="dropdown-item-text">
+                                    <strong>Dacharbeiten</strong>
+                                    <small>Projekt 03</small>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#ueber-uns">Über uns</a>
+                    <a href="https://wa.me/49123456789" style="display: flex; align-items: center; gap: 6px; color: #25D366;">
+                        <i data-lucide="message-circle" style="width:16px"></i> WhatsApp
+                    </a>
+                </nav>
+                <div class="cta-group" style="display: flex; align-items: center; gap: 10px; position: relative;">
+                    <!-- Desktop/Mobile Shared Kontakt Button -->
+                    <a href="#kontakt" class="btn btn-primary btn-kontakt-mobile">Anfragen</a>
+
+                    <!-- Menu Toggle + Dropdown -->
+                    <div style="position: relative;">
+                        <button class="mobile-menu-toggle btn-icon" id="mobileMenuBtn" onclick="toggleMobileNav()" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.1); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0;">
+                            <i data-lucide="menu" style="width:20px; height:20px;" id="menuIconOpen"></i>
+                            <i data-lucide="x" style="width:20px; height:20px; display:none;" id="menuIconClose"></i>
+                        </button>
+
+                        <!-- Liquid Glass Mobile Dropdown -->
+                        <div class="mobile-nav" id="mobileNav">
+                            <a href="#leistungen" class="mobile-nav-link" onclick="toggleMobileNav()">
+                                <span class="mnav-icon"><i data-lucide="home" style="width:15px;height:15px;"></i></span>
+                                Leistungen
+                            </a>
+                            <a href="#projekte" class="mobile-nav-link" onclick="toggleMobileNav()">
+                                <span class="mnav-icon"><i data-lucide="image" style="width:15px;height:15px;"></i></span>
+                                Projekte
+                            </a>
+                            <a href="#ueber-uns" class="mobile-nav-link" onclick="toggleMobileNav()">
+                                <span class="mnav-icon"><i data-lucide="users" style="width:15px;height:15px;"></i></span>
+                                Über uns
+                            </a>
+                            <a href="#kontakt" class="mobile-nav-link" onclick="toggleMobileNav()">
+                                <span class="mnav-icon"><i data-lucide="mail" style="width:15px;height:15px;"></i></span>
+                                Kontakt
+                            </a>
+                            <div class="mobile-nav-divider"></div>
+                            <div class="mobile-nav-cta">
+                                <a href="#kontakt" onclick="toggleMobileNav()">Jetzt anfragen →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <style>
+        .show-mobile-only { display: none; }
+        @media (max-width: 992px) {
+            .show-mobile-only { display: flex; }
+        }
+    </style>
+
+    <!-- FLOATING SIDEBAR -->
+    <div class="floating-sidebar">
+        <a href="tel:+49123456789" class="sidebar-item sidebar-phone">
+            <i data-lucide="phone" style="width:20px"></i>
+        </a>
+        <a href="https://wa.me/49123456789" class="sidebar-item sidebar-wa">
+            <i data-lucide="message-circle" style="width:20px"></i>
+        </a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i data-lucide="shield-check" style="width:16px; color:var(--accent);"></i>
+                    120+ erfolgreiche <span>Projekte</span>
+                </div>
+                <h1>Ihr Dach in den Händen von <span>Meisterhand</span>.</h1>
+                <p>Von der Dachsanierung bis zum Neubau – wir sind Ihr regionaler Partner für Qualität, Transparenz und echte Handwerkskunst.</p>
+                
+                <div class="cta-group" style="margin-left:0; justify-content: flex-start;">
+                    <a href="#kontakt" class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;">
+                        Anfrage senden <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="hero-usp-blocks">
+                    <div class="usp-block">
+                        <div class="usp-icon"><i data-lucide="zap"></i></div>
+                        <div class="usp-content">
+                            <h3>Innovativ</h3>
+                            <p>digital, individuell, dynamisch</p>
+                        </div>
+                    </div>
+                    <div class="usp-block">
+                        <div class="usp-icon"><i data-lucide="award"></i></div>
+                        <div class="usp-content">
+                            <h3>Zuverlässig</h3>
+                            <p>transparent, proaktiv, kontinuierlich</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-info">
+                <div class="top-info-item">
+                    <i data-lucide="phone"></i>
+                    <span>+49 (0) 123 456 789</span>
+                </div>
+                <div class="top-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>Musterstraße 12, 12345 Musterstadt</span>
+                </div>
+            </div>
+            <div class="top-info">
+                <span>Mo - Fr: 07:30 - 17:00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEISTUNGEN -->
+    <section id="leistungen" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Unsere Leistungen</h2>
+                <p>Egal ob Steildach, Flachdach oder energetische Sanierung – wir sind Ihr kompetenter Partner für das gesamte Spektrum des Dachdeckerhandwerks.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box"><i data-lucide="home"></i></div>
+                    <h3>Eindeckungen</h3>
+                    <p>Fachgerechte Eindeckung von Steildächern mit Ziegeln, Schiefer oder Metall – langlebig und ästhetisch.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i data-lucide="layers"></i></div>
+                    <h3>Flachdach</h3>
+                    <p>Moderne Abdichtungssysteme für Flachdächer, Balkone und Terrassen. Sicher gegen jede Witterung.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i data-lucide="sun"></i></div>
+                    <h3>Dachsanierung</h3>
+                    <p>Energetische Modernisierung nach aktuellem Standard. Sparen Sie Heizkosten und steigern Sie den Hauswert.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i data-lucide="layout"></i></div>
+                    <h3>Dachfenster</h3>
+                    <p>Einbau und Austausch von Dachflächenfenstern für mehr Licht und Wohnqualität unter Ihrem Dach.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i data-lucide="cog"></i></div>
+                    <h3>Bauklempnerei</h3>
+                    <p>Sämtliche Metallarbeiten an Dach und Fassade. Dachrinnen, Kaminverkleidungen und Sonderlösungen.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i data-lucide="wrench"></i></div>
+                    <h3>Wartung & Reparatur</h3>
+                    <p>Regelmäßige Checks und schnelle Hilfe bei Sturmschäden oder Undichtigkeiten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats reveal">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3 data-count="120">0</h3>
+                <p>Projekte</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-count="15">0</h3>
+                <p>Jahre Erfahrung</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-count="100">0</h3>
+                <p>Zufriedenheit %</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-count="4.9">0</h3>
+                <p>Google Rating</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJEKTE / REFERENZEN -->
+    <section id="projekte" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vorher &amp; Nachher</h2>
+                <p>Ziehen Sie den Regler und vergleichen Sie selbst – so sieht echter Handwerk-Unterschied aus.</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="ba-tabs">
+                <button class="ba-tab active" data-slide="0">
+                    <span class="ba-tab-num">Projekt 01</span>
+                    Dachsanierung
+                </button>
+                <button class="ba-tab" data-slide="1">
+                    <span class="ba-tab-num">Projekt 02</span>
+                    Dacherneuerung
+                </button>
+                <button class="ba-tab" data-slide="2">
+                    <span class="ba-tab-num">Projekt 03</span>
+                    Dacharbeiten
+                </button>
+            </div>
+
+            <!-- Panel 0: Dach 1 -->
+            <!-- ba-before = Nachher (rechts sichtbar), ba-after = Vorher (links, als Overlay) -->
+            <div class="ba-panel active" data-panel="0">
+                <div class="ba-container" id="baSlider0">
+                    <div class="ba-image ba-before" style="background-image: url('Dach 1 Nachher.png')"></div>
+                    <div class="ba-image ba-after" id="baAfter0" style="background-image: url('Dach 1 Vorher.png'); width: 50%;"></div>
+                    <div class="ba-handle" id="baHandle0" style="left: 50%;"></div>
+                    <div class="ba-label label-before">VORHER</div>
+                    <div class="ba-label label-after">NACHHER</div>
+                    <div class="ba-hint" id="baHint0">← Regler ziehen →</div>
+                </div>
+            </div>
+
+            <!-- Panel 1: Dach 2 -->
+            <div class="ba-panel" data-panel="1">
+                <div class="ba-container" id="baSlider1">
+                    <div class="ba-image ba-before" style="background-image: url('Dach 2 Nachher.png')"></div>
+                    <div class="ba-image ba-after" id="baAfter1" style="background-image: url('Dach 2 Vorher.png'); width: 50%;"></div>
+                    <div class="ba-handle" id="baHandle1" style="left: 50%;"></div>
+                    <div class="ba-label label-before">VORHER</div>
+                    <div class="ba-label label-after">NACHHER</div>
+                    <div class="ba-hint" id="baHint1">← Regler ziehen →</div>
+                </div>
+            </div>
+
+            <!-- Panel 2: Dach 3 -->
+            <div class="ba-panel" data-panel="2">
+                <div class="ba-container" id="baSlider2">
+                    <div class="ba-image ba-before" style="background-image: url('Dach 3 Nachher.png')"></div>
+                    <div class="ba-image ba-after" id="baAfter2" style="background-image: url('Dach 3 Vorher.png'); width: 50%;"></div>
+                    <div class="ba-handle" id="baHandle2" style="left: 50%;"></div>
+                    <div class="ba-label label-before">VORHER</div>
+                    <div class="ba-label label-after">NACHHER</div>
+                    <div class="ba-hint" id="baHint2">← Regler ziehen →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="reveal" style="background: var(--bg-light)">
+        <div class="container">
+            <div class="section-header">
+                <h2>Häufige Fragen</h2>
+                <p>Hier finden Sie Antworten auf die wichtigsten Fragen rund um Ihr Dachprojekt.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Was kostet eine Dachsanierung pro m²?
+                        <i data-lucide="chevron-down" class="chevron" style="width:20px"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Die Kosten variieren je nach Material und Zustand des Dachstuhls. In der Regel liegen sie zwischen 150 und 300 € pro m². Wir erstellen Ihnen gerne ein individuelles Angebot nach einem kostenlosen Vor-Ort-Termin.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Wie lange dauert das Eindecken eines normalen Einfamilienhauses?
+                        <i data-lucide="chevron-down" class="chevron" style="width:20px"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Ein klassisches Satteldach dauert inklusive Gerüstbau und Altdachentsorgung meist 10 bis 14 Werktage, sofern das Wetter mitspielt.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Bieten Sie auch Notfall-Reparaturen bei Sturmschäden an?
+                        <i data-lucide="chevron-down" class="chevron" style="width:20px"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Ja, wir haben einen Notdienst für akute Sturmschäden und Undichtigkeiten. Rufen Sie uns im Ernstfall direkt unter unserer Mobilnummer an.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials reveal" style="background: var(--bg-light)">
+        <div class="container">
+            <div class="section-header">
+                <h2>Was unsere Kunden über Huber sagen</h2>
+                <p>Hunderte zufriedene Hausbesitzer können nicht irren. Vertrauen Sie auf echte Erfahrungen.</p>
+            </div>
+        </div>
+        
+        <div class="marquee-wrapper">
+            <div class="marquee-content" id="marquee">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                    </div>
+                    <p>"Schnelle Rückmeldung, saubere Arbeit und sehr freundliches Team. Unser neues Dach sieht fantastisch aus!"</p>
+                    <div class="client-info"><p>Thomas M., Musterstadt</p></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                    </div>
+                    <p>"Echte Handwerkskunst. Pünktlich, zuverlässig und transparent bei den Kosten. Sehr zu empfehlen!"</p>
+                    <div class="client-info"><p>Andreas L., Bergstadt</p></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                    </div>
+                    <p>"Die Beratung war ehrlich und kompetent. Keine versteckten Kosten. Tolles Ergebnis!"</p>
+                    <div class="client-info"><p>Julia S., Waldheim</p></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                    </div>
+                    <p>"Nach dem Hagelschaden war das Team sofort zur Stelle. Schnelle Nothilfe und Reparatur."</p>
+                    <div class="client-info"><p>Michael R., Südstadt</p></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                    </div>
+                    <p>"Energetische Sanierung perfekt umgesetzt. Wir merken schon jetzt den Unterschied bei den Heizkosten."</p>
+                    <div class="client-info"><p>Karin B., Altstadt</p></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                        <i data-lucide="star" style="width:16px; fill:#fbbf24"></i>
+                    </div>
+                    <p>"Super freundliche Mitarbeiter, Baustelle wurde jeden Tag sauber hinterlassen. Höchste Qualität!"</p>
+                    <div class="client-info"><p>Stefan H., Nordkreis</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="reveal" style="padding-bottom: 140px;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-header" style="text-align: left; margin-bottom: 32px;">
+                        <h2 style="font-size: 42px;">Lassen Sie uns über Ihr Projekt sprechen.</h2>
+                        <p style="margin: 0; max-width: 100%;">Wir beraten Sie unverbindlich und kostenfrei. Nutzen Sie das Formular oder rufen Sie uns direkt an.</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <ul class="contact-info-list" style="list-style: none;">
+                            <li>
+                                <div class="contact-icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <div style="font-weight: 700;">Telefon</div>
+                                    <div style="opacity: 0.8;">+49 (0) 123 456 789</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-icon"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <div style="font-weight: 700;">E-Mail</div>
+                                    <div style="opacity: 0.8;">anfrage@dachwerk-huber.de</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                                <div>
+                                    <div style="font-weight: 700;">Büro & Werkstatt</div>
+                                    <div style="opacity: 0.8;">Musterstraße 12, 12345 Musterstadt</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 24px;">Angebot anfordern</h3>
+                    <form>
+                        <div class="grid2" style="display:grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-group">
+                                <label>Vorname</label>
+                                <input type="text" placeholder="Max">
+                            </div>
+                            <div class="form-group">
+                                <label>Nachname</label>
+                                <input type="text" placeholder="Mustermann">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>E-Mail Adresse</label>
+                            <input type="email" placeholder="max@beispiel.de">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefonnummer</label>
+                            <input type="tel" placeholder="+49 ...">
+                        </div>
+                        <div class="form-group">
+                            <label>Ihre Nachricht</label>
+                            <textarea rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px;">
+                            Anfrage absenden <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFENE STELLEN -->
+    <section id="karriere" class="karriere-section reveal">
+        <div class="karriere-watermark">HUBER</div>
+        <div class="container">
+            <div class="karriere-inner">
+                <div class="karriere-content">
+                    <span class="karriere-badge">
+                        <i data-lucide="briefcase" style="width:14px;height:14px;"></i>
+                        Karriere bei Dachwerk Huber
+                    </span>
+                    <h2>Werde Teil<br>unseres Teams</h2>
+                    <p>Handwerk mit Leidenschaft – Wir suchen motivierte Dachdecker, Gesellen und Azubis, die Qualität genauso ernst nehmen wie wir. Ein familiäres Team, faire Bezahlung und echte Entwicklungsperspektiven warten auf dich.</p>
+
+                    <div class="karriere-stats">
+                        <div class="karriere-stat">
+                            <strong>120+</strong>
+                            <span>Abgeschlossene Projekte</span>
+                        </div>
+                        <div class="karriere-stat">
+                            <strong>15+</strong>
+                            <span>Jahre Erfahrung</span>
+                        </div>
+                        <div class="karriere-stat">
+                            <strong>100%</strong>
+                            <span>Zufriedene Kunden</span>
+                        </div>
+                        <div class="karriere-stat">
+                            <strong>4.9 ★</strong>
+                            <span>Google Bewertung</span>
+                        </div>
+                    </div>
+
+                    <a href="#kontakt" class="btn karriere-btn">
+                        Offene Stellen ansehen
+                        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 20px;">
+                    <i data-lucide="hammer"></i>
+                    DACHWERK<span>HUBER</span>
+                </a>
+                <p style="opacity: 0.7; font-size: 14px;">Ihr zuverlässiger Meisterbetrieb für alle Arbeiten rund um das Dach. Qualität und Leidenschaft seit über 10 Jahren.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Leistungen</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Dacheindeckung</a></li>
+                    <li><a href="#">Flachdach</a></li>
+                    <li><a href="#">Sanierung</a></li>
+                    <li><a href="#">Dachfenster</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#ueber-uns">Über uns</a></li>
+                    <li><a href="#projekte">Referenzen</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#">Impressum</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <ul class="footer-links">
+                    <li style="display:flex; gap:10px; opacity:0.7; font-size:14px;"><i data-lucide="map-pin" style="width:16px"></i> Musterstraße 12, 12345</li>
+                    <li style="display:flex; gap:10px; opacity:0.7; font-size:14px;"><i data-lucide="phone" style="width:16px"></i> +49 123 456 789</li>
+                    <li style="display:flex; gap:10px; opacity:0.7; font-size:14px;"><i data-lucide="mail" style="width:16px"></i> info@dachwerk-huber.de</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Dachwerk Huber GmbH. Alle Rechte vorbehalten.</p>
+            <div style="display:flex; gap:20px">
+                <a href="#">Datenschutz</a>
+                <a href="#">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --- Smart Header Reveal & Scroll Animations ---
+        let lastScrollTop = 0;
+        const headerWrapper = document.getElementById('headerWrapper');
+
+        // Reveal Animation Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Morph logic (full width at 0, notch > 0)
+            if (scrollTop > 10) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+
+            // Hide/Show logic
+            if (scrollTop > 400) { 
+                if (scrollTop > lastScrollTop) {
+                    headerWrapper.classList.add('header-hidden');
+                } else {
+                    headerWrapper.classList.remove('header-hidden');
+                }
+            } else {
+                headerWrapper.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, { passive: true });
+
+        // --- Count Up Animation ---
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const countUpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endValue = parseFloat(target.getAttribute('data-count'));
+                    animateCount(target, endValue);
+                    countUpObserver.unobserve(target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-count]').forEach(el => countUpObserver.observe(el));
+
+        function animateCount(el, end) {
+            let start = 0;
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease out cubic
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                
+                const current = (easeProgress * end).toFixed(end % 1 === 0 ? 0 : 1);
+                el.innerText = current + (el.parentElement.querySelector('p').innerText.includes('%') ? '%' : (end === 4.9 ? '★' : '+'));
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        // --- Multi Before/After Slider Logic ---
+        function initSlider(containerId, afterId, handleId, hintId) {
+            const container = document.getElementById(containerId);
+            const after = document.getElementById(afterId);
+            const handle = document.getElementById(handleId);
+            const hint = document.getElementById(hintId);
+            if (!container || !after || !handle) return;
+
+            let hintDismissed = false;
+
+            function getPos(e) {
+                const rect = container.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                let x = clientX - rect.left;
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                return (x / rect.width) * 100;
+            }
+
+            function move(e) {
+                const pos = getPos(e);
+                after.style.width = pos + '%';
+                handle.style.left = pos + '%';
+                // Fade out hint on first interaction
+                if (hint && !hintDismissed) {
+                    hint.classList.add('hidden');
+                    hintDismissed = true;
+                }
+            }
+
+            container.addEventListener('mousemove', move);
+            container.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                move(e);
+            }, { passive: false });
+        }
+
+        initSlider('baSlider0', 'baAfter0', 'baHandle0', 'baHint0');
+        initSlider('baSlider1', 'baAfter1', 'baHandle1', 'baHint1');
+        initSlider('baSlider2', 'baAfter2', 'baHandle2', 'baHint2');
+
+        // --- Tab switching ---
+        document.querySelectorAll('.ba-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const idx = tab.getAttribute('data-slide');
+                document.querySelectorAll('.ba-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelectorAll('.ba-panel').forEach(p => p.classList.remove('active'));
+                document.querySelector(`.ba-panel[data-panel="${idx}"]`).classList.add('active');
+            });
+        });
+
+        // --- Infinite Marquee Cloning ---
+        const marquee = document.getElementById('marquee');
+        const cards = Array.from(marquee.children);
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            marquee.appendChild(clone);
+        });
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        // Mobile Nav Toggle
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            const iconOpen = document.getElementById('menuIconOpen');
+            const iconClose = document.getElementById('menuIconClose');
+            const isOpen = nav.classList.toggle('active');
+            iconOpen.style.display = isOpen ? 'none' : 'block';
+            iconClose.style.display = isOpen ? 'block' : 'none';
+        }
+
+        // Close mobile nav on outside click
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('mobileNav');
+            const btn = document.getElementById('mobileMenuBtn');
+            if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !btn.contains(e.target)) {
+                nav.classList.remove('active');
+                document.getElementById('menuIconOpen').style.display = 'block';
+                document.getElementById('menuIconClose').style.display = 'none';
+            }
+        });
+
+        // Dropdown Logic
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const isOpen = dropdown.classList.contains('open');
+            closeAllDropdowns();
+            if (!isOpen) dropdown.classList.add('open');
+        }
+
+        function closeAllDropdowns() {
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-dropdown')) {
+                closeAllDropdowns();
+            }
+        });
+
+        // Initialize Lucide Icons again for mobile nav
+        lucide.createIcons();
+    </script>
+</body>
+</html>

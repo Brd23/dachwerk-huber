@@ -1,0 +1,289 @@
+
+<style>
+  .wf-page { font-family: var(--font-sans); max-width: 680px; margin: 0 auto; padding: 1rem 0; }
+  .wf-block { border: 1.5px dashed var(--color-border-secondary); border-radius: var(--border-radius-md); margin-bottom: 10px; overflow: hidden; }
+  .wf-block-header { background: var(--color-background-secondary); padding: 6px 12px; display: flex; align-items: center; gap: 8px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .wf-block-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+  .wf-block-num { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); min-width: 18px; }
+  .wf-block-body { padding: 10px 14px; }
+  .wf-row { display: flex; gap: 8px; margin-top: 6px; }
+  .wf-box { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 4px; padding: 6px 10px; font-size: 12px; color: var(--color-text-secondary); flex: 1; }
+  .wf-box.accent { background: var(--color-background-info); color: var(--color-text-info); border-color: transparent; font-weight: 500; }
+  .wf-box.full { flex: none; width: 100%; }
+  .wf-box.pill { border-radius: 20px; text-align: center; }
+  .wf-box.cta { background: #1D9E75; color: #fff; border-color: transparent; font-weight: 500; text-align: center; border-radius: 4px; padding: 8px 10px; }
+  .wf-box.cta-sec { border: 1.5px solid var(--color-border-primary); text-align: center; font-weight: 500; color: var(--color-text-primary); }
+  .wf-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 6px; margin-bottom: 2px; }
+  .wf-h1 { font-size: 17px; font-weight: 500; color: var(--color-text-primary); margin: 6px 0 4px; }
+  .wf-h2 { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin: 4px 0; }
+  .wf-sub { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .wf-divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 8px 0; }
+  .wf-badge { display: inline-block; font-size: 11px; background: var(--color-background-warning); color: var(--color-text-warning); padding: 2px 8px; border-radius: 20px; font-weight: 500; margin-bottom: 4px; }
+  .wf-img { background: var(--color-background-secondary); border: 0.5px dashed var(--color-border-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--color-text-tertiary); }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 6px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 6px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 6px; }
+  .wf-icon { width: 24px; height: 24px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 4px; display: inline-block; }
+  .note { font-size: 11px; color: var(--color-text-tertiary); margin-top: 4px; font-style: italic; }
+</style>
+
+<div class="wf-page">
+
+  <!-- BLOCK 1: TOP BAR -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">01</span>
+      <span class="wf-block-label">Top Bar</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-row">
+        <div class="wf-box" style="flex:2">Firmenname / Slogan (Text links)</div>
+        <div class="wf-box">Telefonnummer</div>
+        <div class="wf-box">Adresse / Stadt</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 2: HEADER NAV -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">02</span>
+      <span class="wf-block-label">Header / Navigation</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-row">
+        <div class="wf-box" style="flex:1">Logo</div>
+        <div class="wf-box" style="flex:3">Nav-Links: Leistungen · Projekte · Über uns · Kontakt</div>
+        <div class="wf-box accent pill">WhatsApp</div>
+        <div class="wf-box cta-sec pill">Angebot anfragen</div>
+      </div>
+      <p class="note">Sticky auf Desktop. WhatsApp-Button immer sichtbar.</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 3: HERO -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">03</span>
+      <span class="wf-block-label">Hero Section (Above the Fold)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-row">
+        <div style="flex:1.4">
+          <span class="wf-badge">Social Proof Label — z.B. "120+ abgeschlossene Projekte"</span>
+          <div class="wf-h1">H1: Kernversprechen — konkret, nutzenzentriert, lokal</div>
+          <div class="wf-sub">Subheadline: Ergänzung zur Region + Zielgruppe (1-2 Sätze)</div>
+          <hr class="wf-divider">
+          <div class="grid3" style="margin-bottom:8px">
+            <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-size:11px">USP 1</div></div>
+            <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-size:11px">USP 2</div></div>
+            <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-size:11px">USP 3</div></div>
+          </div>
+          <div class="wf-row">
+            <div class="wf-box cta">Primär-CTA: Angebot anfordern →</div>
+            <div class="wf-box cta-sec">Sekundär-CTA: Projekte ansehen</div>
+          </div>
+          <div class="wf-row" style="margin-top:6px">
+            <div class="wf-box" style="font-size:11px">⭐ Google-Rating (4.8) · Anzahl Bewertungen</div>
+            <div class="wf-box" style="font-size:11px">Trustbadge / Zertifikat</div>
+          </div>
+        </div>
+        <div class="wf-img" style="flex:1; min-height:180px">Hero-Bild<br>(Foto Handwerker / Baustelle)<br>+ schwebendes Bewertungs-Widget</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 4: INTRO + SPLIT -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">04</span>
+      <span class="wf-block-label">Intro + Leistungsübersicht</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-h2">H2: Leistungsversprechen (1 Satz)</div>
+      <div class="wf-sub">Kurzer Einleitungstext: Was macht die Firma, warum vertrauen, Region</div>
+      <div class="grid2" style="margin-top:8px">
+        <div class="wf-box cta-sec" style="text-align:center">Leistungsbereich 1</div>
+        <div class="wf-box cta-sec" style="text-align:center">Leistungsbereich 2 (optional)</div>
+      </div>
+      <p class="note">Buttons verlinken zu jeweiliger Sektion oder Unterseite.</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 5: LEISTUNGEN GRID -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">05</span>
+      <span class="wf-block-label">Leistungsportfolio (Grid)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-h2">H2: "Unsere Leistungen"</div>
+      <div class="wf-sub">Intro-Satz mit Versprechen (Qualität / Zuverlässigkeit / Region)</div>
+      <div class="grid3" style="margin-top:8px">
+        <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-weight:500;font-size:12px">Leistung 1</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzbeschreibung (1 Satz)</div></div>
+        <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-weight:500;font-size:12px">Leistung 2</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzbeschreibung (1 Satz)</div></div>
+        <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-weight:500;font-size:12px">Leistung 3</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzbeschreibung (1 Satz)</div></div>
+        <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-weight:500;font-size:12px">Leistung 4</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzbeschreibung (1 Satz)</div></div>
+        <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-weight:500;font-size:12px">Leistung 5</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzbeschreibung (1 Satz)</div></div>
+        <div class="wf-box" style="text-align:center"><div class="wf-icon" style="margin:0 auto 4px"></div><div style="font-weight:500;font-size:12px">Leistung 6</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzbeschreibung (1 Satz)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: MISSION / POSITIONIERUNG -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">06</span>
+      <span class="wf-block-label">Positionierung / Warum wir</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="grid2">
+        <div>
+          <div class="wf-h2">H2: "Warum Kunden uns wählen"</div>
+          <div class="wf-sub">2–3 Sätze: konkrete Differenzierung, kein Marketing-Blabla</div>
+          <div class="wf-row" style="margin-top:8px"><div class="wf-box cta">Anfrage stellen →</div></div>
+        </div>
+        <div class="wf-img" style="min-height:120px">Bild Team / Chefporträt</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: SOCIAL PROOF / BEWERTUNGEN -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">07</span>
+      <span class="wf-block-label">Social Proof / Kundenbewertungen</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-h2">H2: "Dafür loben uns unsere Kunden"</div>
+      <div class="grid3" style="margin-bottom:10px">
+        <div class="wf-box" style="text-align:center"><div style="font-weight:500">USP-Claim 1</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzerklärung</div></div>
+        <div class="wf-box" style="text-align:center"><div style="font-weight:500">USP-Claim 2</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzerklärung</div></div>
+        <div class="wf-box" style="text-align:center"><div style="font-weight:500">USP-Claim 3</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzerklärung</div></div>
+      </div>
+      <hr class="wf-divider">
+      <div class="wf-h2" style="margin-top:8px">Google-Bewertungen Widget</div>
+      <div class="wf-row">
+        <div class="wf-box">⭐⭐⭐⭐⭐ Gesamtrating · Anzahl Bewertungen</div>
+        <div class="wf-box" style="font-size:11px">Zusammenfassung: "Hervorragende Qualität · Pünktlich"</div>
+      </div>
+      <div class="grid3" style="margin-top:6px">
+        <div class="wf-box"><div style="font-size:11px;font-weight:500">Kundenname</div><div style="font-size:11px;color:var(--color-text-tertiary)">⭐⭐⭐⭐⭐ Bewertungstext (2–3 Sätze)</div></div>
+        <div class="wf-box"><div style="font-size:11px;font-weight:500">Kundenname</div><div style="font-size:11px;color:var(--color-text-tertiary)">⭐⭐⭐⭐⭐ Bewertungstext (2–3 Sätze)</div></div>
+        <div class="wf-box"><div style="font-size:11px;font-weight:500">Kundenname</div><div style="font-size:11px;color:var(--color-text-tertiary)">⭐⭐⭐⭐⭐ Bewertungstext (2–3 Sätze)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: STATISTIK-COUNTER -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">08</span>
+      <span class="wf-block-label">Statistik-Counter (Zahlen &amp; Vertrauen)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="grid4">
+        <div class="wf-box" style="text-align:center"><div style="font-size:18px;font-weight:500">120+</div><div style="font-size:11px;color:var(--color-text-tertiary)">Projekte abgeschlossen</div></div>
+        <div class="wf-box" style="text-align:center"><div style="font-size:18px;font-weight:500">10+</div><div style="font-size:11px;color:var(--color-text-tertiary)">Jahre Erfahrung</div></div>
+        <div class="wf-box" style="text-align:center"><div style="font-size:18px;font-weight:500">4.9★</div><div style="font-size:11px;color:var(--color-text-tertiary)">Google Rating</div></div>
+        <div class="wf-box" style="text-align:center"><div style="font-size:18px;font-weight:500">100%</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kundenzufriedenheit</div></div>
+      </div>
+      <p class="note">Animierte Counter (count-up beim Scroll). Alle Werte mit echten Daten befüllen.</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 9: PROJEKTE / REFERENZEN -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">09</span>
+      <span class="wf-block-label">Projekte / Referenzen (Portfolio)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-h2">H2: "Unsere abgeschlossenen Projekte"</div>
+      <div class="wf-sub">Kurzer Einleitungstext + optional Filter-Tabs (nach Leistungsbereich)</div>
+      <div class="grid3" style="margin-top:8px">
+        <div class="wf-img" style="min-height:80px; flex-direction:column; gap:4px"><div style="font-size:11px">Projektfoto</div><div style="font-size:11px;color:var(--color-text-tertiary)">Leistung · Ort</div></div>
+        <div class="wf-img" style="min-height:80px; flex-direction:column; gap:4px"><div style="font-size:11px">Projektfoto</div><div style="font-size:11px;color:var(--color-text-tertiary)">Leistung · Ort</div></div>
+        <div class="wf-img" style="min-height:80px; flex-direction:column; gap:4px"><div style="font-size:11px">Projektfoto</div><div style="font-size:11px;color:var(--color-text-tertiary)">Leistung · Ort</div></div>
+      </div>
+      <div class="wf-row" style="margin-top:8px; justify-content:center">
+        <div class="wf-box cta-sec" style="flex:none;padding:8px 24px">Alle Projekte ansehen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 10: FAQ -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">10</span>
+      <span class="wf-block-label">FAQ (Häufig gestellte Fragen)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-h2">H2: "Häufig gestellte Fragen"</div>
+      <div class="wf-sub">Einleitungssatz optional</div>
+      <div style="margin-top:8px; display:flex; flex-direction:column; gap:6px">
+        <div class="wf-box">▸ Frage 1: Was kostet...? <span style="float:right;color:var(--color-text-tertiary)">+</span></div>
+        <div class="wf-box">▸ Frage 2: Wie schnell...? <span style="float:right;color:var(--color-text-tertiary)">+</span></div>
+        <div class="wf-box">▸ Frage 3: In welchen Regionen...? <span style="float:right;color:var(--color-text-tertiary)">+</span></div>
+        <div class="wf-box">▸ Frage 4: Wie läuft der Ablauf ab...? <span style="float:right;color:var(--color-text-tertiary)">+</span></div>
+        <div class="wf-box">▸ Frage 5: Gibt es ein kostenloses Angebot...? <span style="float:right;color:var(--color-text-tertiary)">+</span></div>
+      </div>
+      <p class="note">Akkordeon-Struktur. SEO + Einwandbehandlung in einem.</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 11: LEAD-GEN BANNER -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">11</span>
+      <span class="wf-block-label">Lead-Gen Banner / Newsletter (optional)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-row">
+        <div style="flex:2">
+          <div class="wf-h2">Headline mit konkretem Anreiz</div>
+          <div class="wf-sub">Bedingungstext (1 Satz)</div>
+        </div>
+        <div class="wf-box cta" style="flex:1;display:flex;align-items:center;justify-content:center">CTA →</div>
+      </div>
+      <p class="note">Eignet sich für Erstgespräch-Angebot oder Rabattaktion.</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 12: BLOG (optional) -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">12</span>
+      <span class="wf-block-label">Blog / Content (optional, SEO)</span>
+    </div>
+    <div class="wf-block-body">
+      <div class="wf-h2">H2: "Ratgeber &amp; Wissenswertes"</div>
+      <div class="wf-sub">Filterfunktion nach Kategorie (Tags)</div>
+      <div class="grid3" style="margin-top:8px">
+        <div class="wf-box"><div class="wf-img" style="height:40px;margin-bottom:6px">Beitragsbild</div><div style="font-size:11px;font-weight:500">Beitragstitel</div><div style="font-size:11px;color:var(--color-text-tertiary)">Datum · Kategorie</div></div>
+        <div class="wf-box"><div class="wf-img" style="height:40px;margin-bottom:6px">Beitragsbild</div><div style="font-size:11px;font-weight:500">Beitragstitel</div><div style="font-size:11px;color:var(--color-text-tertiary)">Datum · Kategorie</div></div>
+        <div class="wf-box"><div class="wf-img" style="height:40px;margin-bottom:6px">Beitragsbild</div><div style="font-size:11px;font-weight:500">Beitragstitel</div><div style="font-size:11px;color:var(--color-text-tertiary)">Datum · Kategorie</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 13: FOOTER -->
+  <div class="wf-block">
+    <div class="wf-block-header">
+      <span class="wf-block-num">13</span>
+      <span class="wf-block-label">Footer</span>
+    </div>
+    <div class="wf-block-body">
+      <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:8px">
+        <div class="wf-box"><div style="font-weight:500;font-size:12px">Logo + Trustbadge</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kurzer Slogan</div></div>
+        <div class="wf-box"><div style="font-weight:500;font-size:12px">Leistungen (SEO)</div><div style="font-size:11px;color:var(--color-text-tertiary)">Trockenbau, Dachdeckung...</div></div>
+        <div class="wf-box"><div style="font-weight:500;font-size:12px">Wichtiges</div><div style="font-size:11px;color:var(--color-text-tertiary)">Kontakt, Karriere, Angebot</div></div>
+        <div class="wf-box"><div style="font-weight:500;font-size:12px">Rechtliches &amp; Kontakt</div><div style="font-size:11px;color:var(--color-text-tertiary)">Impressum, Datenschutz, Mail, Tel</div></div>
+      </div>
+      <div class="wf-row" style="margin-top:8px">
+        <div class="wf-box full" style="font-size:11px;text-align:center">© 2026 [Firmenname] GmbH · Alle Rechte vorbehalten</div>
+      </div>
+    </div>
+  </div>
+
+</div>
