@@ -270,7 +270,15 @@
             box-shadow: var(--shadow-md);
         }
 
+        .hero-wrapper {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
         .hero {
+            flex: 1;
             padding: 140px 0 80px;
             background:
                 linear-gradient(to bottom, rgba(10, 18, 35, 0.72) 0%, rgba(10, 18, 35, 0.60) 60%, rgba(10, 18, 35, 0.78) 100%),
@@ -278,6 +286,9 @@
             color: white;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero::before {
@@ -1650,6 +1661,8 @@
         </a>
     </div>
 
+    <!-- HERO WRAPPER: fills exactly one viewport height -->
+    <div class="hero-wrapper">
     <!-- HERO -->
     <section class="hero">
         <div class="container hero-grid">
@@ -1705,6 +1718,7 @@
             </div>
         </div>
     </div>
+    </div><!-- end .hero-wrapper -->
 
     <!-- LEISTUNGEN -->
     <section id="leistungen" class="reveal">
